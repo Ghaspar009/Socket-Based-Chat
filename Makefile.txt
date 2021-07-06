@@ -1,0 +1,11 @@
+PHONY: all microserver microclient clean
+
+all: microserver microclient
+
+microserver: server.c
+        gcc server.c -o server.o -lpthread
+microclient: client.c
+        gcc client.c -o client.o -lpthread
+
+clean:
+        rm -f *.o
